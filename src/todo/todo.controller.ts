@@ -24,8 +24,6 @@ export class TodoController {
   }
 
   @Post()
-  @ApiResponse({ status: 201, description: 'The record has been successfully created.'})
-  @ApiResponse({ status: 403, description: 'Forbidden.'})
   create(@Body() createTodoDto: CreateTodoDto): Promise<Todo>{
     return this.todoService.create(createTodoDto)
   }
